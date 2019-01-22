@@ -1,0 +1,44 @@
+body, html {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+#container {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+#menu {
+    display: grid;
+    grid-template-rows: 20% 80%;
+    width: 450px;
+    height: 600px;
+    border: black solid 2px;
+    justify-content: center;
+}
+
+#menu > h1 {
+    margin: 0;
+    font-size: 50px;
+}
+
+#slowMode, #activeMode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#slowMode > a {
+    text-decoration: none;
+    color: black;
+}
+
+.btn {
+    border: 1px black solid;
+    height: 3em;
+    margin-bottom: 2em;
+}

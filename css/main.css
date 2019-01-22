@@ -1,0 +1,336 @@
+body {
+    margin: 0 0;
+    background-image: url("../images/stage1.gif");
+    background-repeat: no-repeat;
+    background-size: cover;  
+    height: 100vh;
+}
+
+#container {
+   display: grid;
+   grid-template-rows: 20% 80%;
+   grid-template-columns: 50% 50%;
+   height: 100vh;
+}
+
+/*////////////////////////////////// Bouton Start ////////////////////////////////*/
+#start {
+    position: absolute;
+    background-color: #398833;
+    border-radius: 12px;  
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    left: 45%;
+    top: 20%;
+    width: 10%;
+}
+/*//////////////////////////// Text Draw et Victory ///////////////////////////////*/
+#draw, #victory {
+    position: absolute;
+    font-size: 20vh;
+    left: 0px;
+    right: 0px; 
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;  
+} 
+
+#victory {
+    bottom: 37%;
+    visibility: hidden;
+} 
+
+#victory p { 
+    margin: 0;
+    background: -webkit-linear-gradient(yellow, red, yellow);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+} 
+
+#draw {
+    bottom: 37%;
+    visibility: hidden;
+}
+
+#draw p {
+    margin: 0;
+    background: -webkit-linear-gradient(yellow, red, yellow);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0.9;
+}
+
+/*/////////////////////////////   Div Infos générale     /////////////////////////////////// */
+#playerInfo {
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    grid-template-rows: repeat(3, 33.3%);
+    grid-template-areas: 
+    ". Name ."
+    ". Health ."
+    ". Buff .";
+}
+
+#enemyInfo {
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    grid-template-rows: repeat(3, 33.3%);
+    grid-template-areas: 
+    ". Name ."
+    ". Health ."
+    ". Buff .";
+}
+
+/*--------------- Players Name --------------------*/
+
+.name {
+    grid-area: Name;
+    color: rgba(185, 156, 63, 0.9);
+    font-family: 'Erica One', cursive;
+    /* font-size: 247%; */
+    font-size: 5.3vh;
+}
+
+/*--------------- Health Bar ---------------------- */
+.healthBar {
+    display: grid;
+    grid-area: Health;
+    border : black solid 3px;
+    background-color: rgba(255, 0, 0, 0.4);
+}
+
+.greenbar {
+    background-color: #3BC546;
+    width: 100%;
+}
+
+/*--------------------- Weapon ---------------------------*/
+/* .buff {    
+    grid-area: Buff;
+}
+
+.buff > img {
+  height: 80%;
+} */
+
+/*/////////////////////////////////////// Characters /////////////////////////////*/
+
+#playerCharacter {
+    background-image: url("../images/fighter1.gif");
+    background-repeat: no-repeat;
+    background-position: 50% 88%;
+    display: grid;
+}
+
+#enemyCharacter {
+    background-image: url("../images/fighter2.gif");
+    background-repeat: no-repeat;
+    background-position: 50% 88%;
+    display: grid;
+}
+
+/*/////////////////////////////// Animations ///////////////////////////////// */
+/*----------------------- The shake animation ------------------- */
+@-webkit-keyframes shake {
+    from,
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      -webkit-transform: translate3d(-10px, 0, 0);
+      transform: translate3d(-10px, 0, 0);
+    }
+  
+    20%,
+    40%,
+    60%,
+    80% {
+      -webkit-transform: translate3d(10px, 0, 0);
+      transform: translate3d(10px, 0, 0);
+    }
+  }
+  
+@keyframes shake {
+    from,
+    to {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      -webkit-transform: translate3d(-10px, 0, 0);
+      transform: translate3d(-10px, 0, 0);
+    }
+  
+    20%,
+    40%,
+    60%,
+    80% {
+      -webkit-transform: translate3d(10px, 0, 0);
+      transform: translate3d(10px, 0, 0);
+    }
+}
+  
+.shake {
+    -webkit-animation: shake linear 0.3s;
+    animation: shake linear 0.3s;
+}
+  
+/*------------------------- The FadeIn animation ------------------------ */
+@-webkit-keyframes zoomIn {
+    from {
+      opacity: 0;
+      -webkit-transform: scale3d(0.3, 0.3, 0.3);
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      -webkit-transform: scale3d(0.3, 0.3, 0.3);
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+  
+    50% {
+      opacity: 1;
+    }
+  }
+  
+  .zoomIn {
+    -webkit-animation: zoomIn linear 2s;
+    animation: zoomIn linear 0.7s;
+  }
+
+/*----------------------------- Tada Animation ------------------------ */
+@-webkit-keyframes tada {
+    from {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  
+    10%,
+    20% {
+      -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+      transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    }
+  
+    30%,
+    50%,
+    70%,
+    90% {
+      -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+      transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    }
+  
+    40%,
+    60%,
+    80% {
+      -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+      transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    }
+  
+    to {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
+  
+  @keyframes tada {
+    from {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  
+    10%,
+    20% {
+      -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+      transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    }
+  
+    30%,
+    50%,
+    70%,
+    90% {
+      -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+      transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    }
+  
+    40%,
+    60%,
+    80% {
+      -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+      transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    }
+  
+    to {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
+  
+  .tada {
+    -webkit-animation-name: tada;
+    animation-name: tada;
+  }
+
+/*//////////////////////////////////////////////////////////*/
+/*-------------------- The countDOwn display --------------- */
+
+#playerDisplay {
+    display: grid;
+    justify-self: center;
+    align-items: center;
+    background-color: white;
+    width: 7vw;
+    height: 13vh;
+    border: solid black 2px;
+    
+}
+
+#playerDisplay p {
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+    font-weight: bold;
+    font-size: 8.2vh;
+}
+
+#enemyDisplay {
+    display: grid;
+    justify-self: center;
+    align-items: center;
+    background-color: white;
+    width: 7vw;
+    height: 13vh;
+    border: solid black 2px;
+    
+}
+
+#enemyDisplay p {
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+    font-weight: bold;
+    font-size: 8.2vh;
+}
+

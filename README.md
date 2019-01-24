@@ -1,4 +1,4 @@
-# My-Fighting-Game
+# My-Fighting-Game-BETA
 
 https://lyioh.github.io/My-Fighting-Game/
 

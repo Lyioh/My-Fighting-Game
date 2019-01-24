@@ -3,7 +3,7 @@
 https://lyioh.github.io/My-Fighting-Game/
 
 ## How to play
-Players buttons:
+
 ![Keyboard Configuration](https://github.com/Lyioh/My-Fighting-Game/blob/master/images/keyboard.png "Keyboard Configuration")
 
 ## Goal
